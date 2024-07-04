@@ -6,11 +6,16 @@ for (const param of urlParams) {
 }
 
 function checkUserId() {
-  if (postId === "") {
+  let emptyPostId = postId === "";
+  console.log(!emptyPostId);
+  if (emptyPostId) {
     let enteredPostId = prompt("Enter Post ID");
 
     if (Number.isInteger(+enteredPostId)) {
-      if (enteredPostId < 1 || enteredPostId > 10) {
+      if (enteredPostId ==="") {
+        alert("User Id cannot be empty");
+        checkUserId();
+      } else if ((!emptyPostId && enteredPostId < 1) || enteredPostId > 10) {
         console.log("number is not in range");
         alert("UserId cannot be lower than 1 or higher than 10");
         checkUserId();
@@ -25,8 +30,9 @@ function checkUserId() {
     }
   }
 }
-console.log(postId);
+
 checkUserId();
+console.log(postId);
 //console.log(postId);
 
 async function getPosts() {
@@ -49,7 +55,7 @@ async function createPosts() {
   const posts = await postsPromise;
   const cardsDiv = document.getElementById("cardsDiv");
 
-  if (postId > 100) {
+  if (postId > 10) {
     alert("This post not exist!");
   } else {
     for (i = 0; i < posts.length; i++) {
