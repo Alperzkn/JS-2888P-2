@@ -3,7 +3,6 @@ async function getUsers() {
   try {
     const data = await fetch("https://jsonplaceholder.typicode.com/users");
     usersRawData = await data.json();
-    //console.log(users);
   } catch {
     console.log("Bir hata oluştu");
   }
