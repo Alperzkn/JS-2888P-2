@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 //console.log(urlParams);
 for (const param of urlParams) {
-  //console.log(param);
+  console.log(param);
   postId = param[1];
 }
 

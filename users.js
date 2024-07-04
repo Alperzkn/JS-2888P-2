@@ -31,7 +31,8 @@ async function createUsers() {
     let userCompanyCatchPhrase = users[i].company.catchPhrase;
     let userCompanyBs = users[i].company.bs;
 
-    let cardHTMLData = `<div class="d-flex align-items-start my-3 py-2 border rounded-3 bg-light" >
+    let cardHTMLData = `
+              <div class="d-flex align-items-start my-3 py-2 border rounded-3 bg-light" >
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab-${userId}" role="tablist" aria-orientation="vertical">
                     <button class="nav-link active" id="v-pills-info-tab-${userId}" data-bs-toggle="pill"
                         data-bs-target="#v-pills-info-${userId}" type="button" role="tab" aria-controls="v-pills-info-${userId}"
@@ -45,6 +46,7 @@ async function createUsers() {
                     <button class="nav-link" id="v-pills-contact-tab-${userId}" data-bs-toggle="pill"
                         data-bs-target="#v-pills-contact-${userId}" type="button" role="tab" aria-controls="v-pills-contact-${userId}"
                         aria-selected="false"><span class="fa fa-envelope text-start"></span> Contact</button>
+                    <a type="button" class="nav-link" href="/posts.html?userId=${userId}" target="_blank"><span class="fa fa-comment text-start"></span> Comments</a>
                 </div>
                 <div class="tab-content" id="v-pills-tabContent-${userId}">
                     <div class="tab-pane fade show active align-items-center" id="v-pills-info-${userId}" role="tabpanel"
@@ -52,6 +54,7 @@ async function createUsers() {
                         <p><b>Id: </b>${userId}
                         <p><b>Username: </b>${userUserName}</p>
                         <p><b>Name: </b>${userName}</p>
+                        
                     </div>
                     <div class="tab-pane fade" id="v-pills-address-${userId}" role="tabpanel"
                         aria-labelledby="v-pills-address-tab-${userId}">
@@ -76,6 +79,7 @@ async function createUsers() {
                         <p><b>Website: </b>${userWebsite}</p>
                     </div>
                 </div>
+                
             </div>`;
     cardsRow.innerHTML += cardHTMLData;
   }
