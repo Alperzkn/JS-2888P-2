@@ -21,10 +21,10 @@ function checkUserId() {
         checkUserId();
       } else {
         postId = enteredPostId;
-        console.log("number entered correctly");
+        console.log("number entered correctly  --->  ", postId);
       }
     } else {
-      console.log("not number entered");
+      console.log("not number entered   --->   ", enteredPostId);
       alert("You should enter number");
       checkUserId();
     }
@@ -32,7 +32,6 @@ function checkUserId() {
 }
 
 checkUserId();
-console.log(postId);
 //console.log(postId);
 
 async function getPosts() {
@@ -67,7 +66,6 @@ async function createPosts() {
       let postBody = posts[i].body;
 
       const cardHTMLData = `
-      
                     <div class="card my-3">
                         <div class="card-header d-flex justify-content-between">
                             ${postEmail}
