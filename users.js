@@ -46,7 +46,7 @@ async function createUsers() {
                     <button class="nav-link" id="v-pills-contact-tab-${userId}" data-bs-toggle="pill"
                         data-bs-target="#v-pills-contact-${userId}" type="button" role="tab" aria-controls="v-pills-contact-${userId}"
                         aria-selected="false"><span class="fa fa-envelope text-start"></span> Contact</button>
-                    <a type="button" class="nav-link" href="../../posts.html?userId=${userId}"><span class="fa fa-comment text-start"></span> Comments</a>
+                    <a type="button" class="nav-link" href="posts.html?userId=${userId}"><span class="fa fa-comment text-start"></span> Comments</a>
                 </div>
                 <div class="tab-content" id="v-pills-tabContent-${userId}">
                     <div class="tab-pane fade show active align-items-center" id="v-pills-info-${userId}" role="tabpanel"
